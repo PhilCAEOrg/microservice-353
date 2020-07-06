@@ -92,6 +92,28 @@ public class todoTest {
 
   /**
    * 
+   * Test for the todo_item method.
+   * 
+   */
+  @Test
+  public void testtodo_item() {
+    MiniClient c = new MiniClient();
+    c.setAddressPort(HTTP_ADDRESS, HTTP_PORT);
+    try {
+      JSONObject item = new JSONObject();
+      c.setLogin(testAgent.getIdentifier(), testPass);
+      ClientResponse result = c.sendRequest("POST", mainPath + "/todo_item", item.toJSONString(),
+        MediaType.APPLICATION_JSON, MediaType.APPLICATION_JSON, new HashMap<String,String>());
+      assertTrue(true); // change here
+      System.out.println("Result of 'testtodo_item': " + result.getResponse().trim());
+    } catch (Exception e) {
+      e.printStackTrace();
+      fail("Exception: " + e);
+    }
+  }
+
+  /**
+   * 
    * Test for the todos method.
    * 
    */

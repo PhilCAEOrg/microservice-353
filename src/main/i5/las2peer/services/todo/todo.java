@@ -94,6 +94,50 @@ public class todo extends RESTService {
 
       /**
    * 
+   * todo_item
+   *
+   * 
+   * @param item  a JSONObject
+   * 
+   * @return Response 
+   * 
+   */
+  @POST
+  @Path("/todo_item")
+  @Produces(MediaType.APPLICATION_JSON)
+  @Consumes(MediaType.TEXT_PLAIN)
+  @ApiResponses(value = {
+       @ApiResponse(code = HttpURLConnection.HTTP_OK, message = "p_resp_name")
+  })
+  @ApiOperation(value = "todo_item", notes = " ")
+  public Response todo_item(String item) {
+    JSONObject item_JSON = (JSONObject) JSONValue.parse(item);
+
+
+
+
+     
+    // service method invocations
+
+     
+
+
+
+
+    // p_resp_name
+    boolean p_resp_name_condition = true;
+    if(p_resp_name_condition) {
+      JSONObject p_res_name = new JSONObject();
+
+      
+
+      return Response.status(HttpURLConnection.HTTP_OK).entity(p_res_name.toJSONString()).build();
+    }
+    return null;
+  }
+
+  /**
+   * 
    * todos
    *
    * 
